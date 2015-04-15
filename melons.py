@@ -11,7 +11,10 @@ class WatermelonOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
 
-        total = 0   # TODO, calculate the real amount!
+        if qty >= 3:
+            total = float(5)*.75*float(qty) 
+        else:
+            total = float(5)*float(qty) 
 
         return total
 
@@ -25,8 +28,11 @@ class CantaloupeOrder(object):
 
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
-
-        total = 0   # TODO, calculate the real amount!
+        
+        if qty >= 5:
+            total = float(5)*.50*float(qty) 
+        else:
+            total = float(5)*float(qty) 
 
         return total
 
@@ -41,7 +47,7 @@ class CasabaOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
 
-        total = 0   # TODO, calculate the real amount!
+        total = float(6)*float(qty)*1.5
 
         return total
 
@@ -56,7 +62,7 @@ class SharlynOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
 
-        total = 0   # TODO, calculate the real amount!
+        total = float(5)*float(qty)*1.5
 
         return total
 
@@ -71,7 +77,7 @@ class SantaClausOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
 
-        total = 0   # TODO, calculate the real amount!
+        total = float(5)*float(qty)*1.5
 
         return total
 
@@ -86,7 +92,7 @@ class ChristmasOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
 
-        total = 0   # TODO, calculate the real amount!
+        total = float(5)*float(qty)                                 
 
         return total
 
@@ -101,7 +107,7 @@ class HornedMelonOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
 
-        total = 0   # TODO, calculate the real amount!
+        total = float(5)*float(qty)*1.5
 
         return total
 
@@ -116,7 +122,7 @@ class XiguaOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
 
-        total = 0   # TODO, calculate the real amount!
+        total = float(5)*float(qty)*1.5*float(2)    
 
         return total
 
@@ -131,6 +137,6 @@ class OgenOrder(object):
     def get_price(self, qty):
         """Calculate price, given a number of melons ordered."""
 
-        total = 0   # TODO, calculate the real amount!
+        total = float(6)*float(qty)  
 
         return total
