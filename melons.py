@@ -1,155 +1,144 @@
 """This file should have our melon-type classes in it."""
 
 class Melon(object):
-    name = None
-    base_price = float(5)
+    # name = None
+    # color = None
+    # imported = None
+    # shape = None
+    # seasons = None
+
+    def __init__(self, name=None, color=None, imported=None, shape="natural",
+    seasons=None, base_price = float(5)):
+        self.name = name
+        self.color = color
+        self.imported = imported
+        self.shape = shape
+        self.seasons = seasons
+        self.base_price = base_price
+
 
     def get_price(self, qty):
         total = self.base_price * qty
         return total
 
-w = Melon()
-w.name = "Watermelon"
-w.base_price = float(6)
+class Watermelon(Melon):
+    
+    def __init__(self):
+        return super(Watermelon, self).__init__(name ="Watermelon",
+        color = "green", imported = False,
+        seasons = ["Fall", "Summer"])
+    
+    def get_price(self, qty):
 
-w.get_price(10)
-
-# class WatermelonOrder(object):
-#     species = "Watermelon"
-#     color = "green"
-#     imported = False
-#     shape = 'natural'
-#     seasons = ['Fall', 'Summer']
-
-#     def get_price(self, qty):
-#         """Calculate price, given a number of melons ordered."""
-
-#         if qty >= 3:
-#             total = self.base_price()*.75*float(qty) 
-#         else:
-#             total = float(5)*float(qty) 
-
-#         return total
-
-
-# class CantaloupeOrder(object):
-#     species = "Cantaloupe"
-#     color = "tan"
-#     imported = False
-#     shape = 'natural'
-#     seasons = ['Spring', 'Summer']
-
-#     def get_price(self, qty):
-#         """Calculate price, given a number of melons ordered."""
+        if qty >= 3:
+            total = self.base_price*float(qty)*.75
+        else:
+            total = self.base_price * float(qty)
         
-#         if qty >= 5:
-#             total = float(5)*.50*float(qty) 
-#         else:
-#             total = float(5)*float(qty) 
-
-#         return total
+        return total
 
 
-# class CasabaOrder(object):
-#     species = "Casaba"
-#     color = "green"
-#     imported = True
-#     shape = 'natural'
-#     seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+class Cantaloupe(Melon):
+    
+    def __init__(self):
+        return super(Cantaloupe, self).__init__(name ="Cantaloupe",
+        color = "tan", imported = False,
+        seasons = ["Summer", "Spring"])
+    
+    def get_price(self, qty):
 
-#     def get_price(self, qty):
-#         """Calculate price, given a number of melons ordered."""
+        if qty >= 5:
+            total = self.base_price*float(qty)*.50
+        else:
+            total = self.base_price * float(qty)
+        
+        return total
 
-#         total = float(6)*float(qty)*1.5
 
-#         return total
+class Casaba(Melon):
+    
+    def __init__(self):
+        return super(Casaba, self).__init__(name ="Casaba",
+        color = "green", imported = True,
+        seasons = ["Spring", "Summer", "Fall", "Winter"])
+    
+    def get_price(self, qty):
+
+        total = (self.base_price + 1) * 1.5 *float(qty)
+   
+        return total
+
+
+class Sharlyn(Melon):
+    
+    def __init__(self):
+        return super(Sharlyn, self).__init__(name ="Sharlyn",
+        color = "tan", imported = True,
+        seasons = ["Summer"])
+       
+    def get_price(self, qty):
+    
+        total = self.base_price * 1.5 *float(qty)
+   
+        return total
+
+
+class SantaClaus(Melon):
+    
+    def __init__(self):
+        return super(SantaClaus, self).__init__(name ="Santa Claus",
+        color = "green", imported = True,
+        seasons = ["Winter", "Spring"])
+    
+    def get_price(self, qty):
+
+        total = self.base_price * 1.5 *float(qty)
+   
+        return total
+
+class ChristmasMelon(Melon):
+
+    def __init__(self):
+        return super(ChristmasMelon, self).__init__(name ="Christmas Melon",
+        color = "green", imported = False,
+        seasons = ["Winter", "Spring"])
 
     
-# class SharlynOrder(object):
-#     species = "Sharlyn"
-#     color = "tan"
-#     imported = True
-#     shape = 'natural'
-#     seasons = ['Summer']
+class HornedMelon(Melon):
 
-#     def get_price(self, qty):
-#         """Calculate price, given a number of melons ordered."""
-
-#         total = float(5)*float(qty)*1.5
-
-#         return total
-
+    def __init__(self):
+        return super(HornedMelon, self).__init__(name ="Horned Melon",
+        color = "yellow", imported = True,
+        seasons = ["Summer"])
     
-# class SantaClausOrder(object):
-#     species = "Santa Claus"
-#     color = "green"
-#     imported = True
-#     shape = 'natural'
-#     seasons = ['Winter', 'Spring']
+    def get_price(self, qty):
 
-#     def get_price(self, qty):
-#         """Calculate price, given a number of melons ordered."""
-
-#         total = float(5)*float(qty)*1.5
-
-#         return total
-
+        total = self.base_price * 1.5 *float(qty)
+   
+        return total
     
-# class ChristmasOrder(object):
-#     species = "Christmas"
-#     color = "green"
-#     imported = False
-#     shape = 'natural'
-#     seasons = ['Winter', 'Spring']
+class Xigua(Melon):
 
-#     def get_price(self, qty):
-#         """Calculate price, given a number of melons ordered."""
-
-#         total = float(5)*float(qty)                                 
-
-#         return total
-
+    def __init__(self):
+        return super(Xigua, self).__init__(name ="Xigua",
+        color = "black", imported = True,
+        seasons = ["Summer"], shape = "square")
     
-# class HornedMelonOrder(object):
-#     species = "Horned Melon"
-#     color = "yellow"
-#     imported = True
-#     shape = 'natural'
-#     seasons = ['Summer']
+    def get_price(self, qty):
 
-#     def get_price(self, qty):
-#         """Calculate price, given a number of melons ordered."""
+        total = self.base_price * 1.5 * float(2) *float(qty)
+   
+        return total
+ 
+class Ogen(Melon):
 
-#         total = float(5)*float(qty)*1.5
-
-#         return total
-
+    def __init__(self):
+        return super(Ogen, self).__init__(name ="Ogen",
+        color = "tan", imported = False,
+        seasons = ["Spring", "Summer"])
     
-# class XiguaOrder(object):
-#     species = "Xigua"
-#     color = "black"
-#     imported = True
-#     shape = 'square'
-#     seasons = ['Summer']
+    def get_price(self, qty):
 
-#     def get_price(self, qty):
-#         """Calculate price, given a number of melons ordered."""
-
-#         total = float(5)*float(qty)*1.5*float(2)    
-
-#         return total
-
-    
-# class OgenOrder(object):
-#     species = "Ogen"
-#     color = "tan"
-#     imported = False
-#     shape = 'natural'
-#     seasons = ['Spring', 'Summer']
-
-#     def get_price(self, qty):
-#         """Calculate price, given a number of melons ordered."""
-
-#         total = float(6)*float(qty)  
-
-#         return total
+        total = (self.base_price + 1) * float(qty)
+   
+        return total
